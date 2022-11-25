@@ -1,7 +1,7 @@
 import styles from "./CreatePost.module.css";
 
 import { useState } from "react";
-// import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useInsertDocument } from "../../hooks/useInsertDocument";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 
@@ -16,7 +16,7 @@ const CreatePost = () => {
 
     const navigate = useNavigate();
 
-    // const { insertDocument, response } = useInsertDocument("posts");
+    const { insertDocument, response } = useInsertDocument("posts");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -36,8 +36,6 @@ const CreatePost = () => {
         if (!title || !image || !tags || !body) {
             setFormError("Por favor, preencha todos os campos!");
         }
-
-        console.log(tagsArray);
 
         console.log({
             title,
@@ -111,7 +109,7 @@ const CreatePost = () => {
                         value={tags}
                     />
                 </label>
-                {/* {!response.loading && <button className="btn">Criar post!</button>}
+                {!response.loading && <button className="btn">Criar post!</button>}
                 {response.loading && (
                     <button className="btn" disabled>
                         Aguarde.. .
@@ -119,7 +117,7 @@ const CreatePost = () => {
                 )}
                 {(response.error || formError) && (
                     <p className="error">{response.error || formError}</p>
-                )} */}
+                )}
             </form>
         </div>
     );
