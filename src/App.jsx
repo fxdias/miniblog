@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import About from './pages/About/About'
 import Home from './pages/Home/Home'
+import Search from './pages/Search/Search'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import { AuthProvider } from './context/AuthContext'
@@ -46,7 +47,7 @@ function App() {
                 element={user ? <EditPost /> : <Navigate to="/login" />}
               /> */}
               {/* <Route path="/posts/:id" element={<Post />} /> */}
-              {/* <Route path="/search" element={<Search />} /> */}
+              <Route path="/search" element={<Search />} />
               <Route
                 path="/login"
                 element={!user ? <Login /> : <Navigate to="/" />}
