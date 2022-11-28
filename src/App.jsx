@@ -7,6 +7,7 @@ import Home from './pages/Home/Home'
 import Search from './pages/Search/Search'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
+import Post from './pages/Post/Post'
 import { AuthProvider } from './context/AuthContext'
 import { onAuthStateChanged } from 'firebase/auth'
 import { useAuthentication } from './hooks/useAuthentication'
@@ -46,7 +47,7 @@ function App() {
                 path="/posts/edit/:id"
                 element={user ? <EditPost /> : <Navigate to="/login" />}
               /> */}
-              {/* <Route path="/posts/:id" element={<Post />} /> */}
+              <Route path="/posts/:id" element={<Post />} />
               <Route path="/search" element={<Search />} />
               <Route
                 path="/login"
