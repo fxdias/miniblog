@@ -14,6 +14,7 @@ import { useAuthentication } from './hooks/useAuthentication'
 import { useState, useEffect } from 'react'
 import CreatePost from './pages/CreatePost/CreatePost'
 import Dashboard from './pages/Dashboard/Dashboard'
+import EditPost from './pages/EditPost/EditPost'
 
 function App() {
   const [user, setUser] = useState(undefined)
@@ -43,10 +44,10 @@ function App() {
                 path="/posts/create"
                 element={user ? <CreatePost /> : <Navigate to="/login" />}
               />
-              {/* <Route
+              <Route
                 path="/posts/edit/:id"
                 element={user ? <EditPost /> : <Navigate to="/login" />}
-              /> */}
+              />
               <Route path="/posts/:id" element={<Post />} />
               <Route path="/search" element={<Search />} />
               <Route
